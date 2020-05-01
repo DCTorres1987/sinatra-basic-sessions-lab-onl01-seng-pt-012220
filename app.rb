@@ -15,7 +15,7 @@ class App < Sinatra::Base
   post '/checkout' do 
     @session = session
     @item = params["item"]
-    session["item"] = @item
+    session[:item] = @item
     
     erb :checkout
   end
