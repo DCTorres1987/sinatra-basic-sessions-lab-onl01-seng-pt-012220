@@ -13,9 +13,10 @@ class App < Sinatra::Base
   end
   
   post '/checkout' do 
+    
     @item = params["item"]
     session["item"] = @item
-    @session = session
+    
     set :session_secret, "secret"
     erb :checkout
   end
